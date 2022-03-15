@@ -47,6 +47,7 @@ def login():
         #     return redirect(url_for('show_entries'))
         login_user(user)
         flash('Logged in successfully.')
+        session['logged_in'] = True
         return redirect(url_for('show_entries'))
 
     return render_template('login.html', error=error)
